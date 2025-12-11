@@ -1,89 +1,254 @@
 @import "tailwindcss";
 
-/* Fade Animations */
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Outfit", sans-serif;
+
+  --color-primary: #8B5CF6;
+  --color-primary-hover: #7C3AED;
+  --color-secondary: #EC4899;
+
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
+  --animate-fade-in-down: fade-in-down 0.6s ease-out forwards;
+  --animate-fade-in-left: fade-in-left 0.6s ease-out forwards;
+  --animate-fade-in-right: fade-in-right 0.6s ease-out forwards;
+  --animate-scale-in: scale-in 0.5s ease-out forwards;
+  --animate-pop-in: pop-in 0.4s ease-out forwards;
+  --animate-slide-up: slide-up 0.6s ease-out forwards;
+  --animate-glow-pulse: glow-pulse 2s ease-in-out infinite;
+  --animate-float: float 3s ease-in-out infinite;
+}
+
+/* Base Styles */
+body {
+  font-family: var(--font-sans);
+  background-color: #0F0715;
+  /* Darker base background */
+  color: #E2E8F0;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a0b2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2e1065;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4c1d95;
+}
+
+/* Glass Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-hover {
+  transition: all 0.3s ease;
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Grid Background */
+.bg-grid {
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  mask-image: linear-gradient(to bottom, transparent, 10%, white, 90%, transparent);
+  /* Fade edges */
+}
+
+/* Keyframes */
 @keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0);   }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fade-in-down {
-  from { opacity: 0; transform: translateY(-30px); }
-  to   { opacity: 1; transform: translateY(0);   }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fade-in-left {
-  from { opacity: 0; transform: translateX(-30px); }
-  to   { opacity: 1; transform: translateX(0);   }
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fade-in-right {
-  from { opacity: 0; transform: translateX(30px); }
-  to   { opacity: 1; transform: translateX(0);   }
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
-/* Scale Animations */
 @keyframes scale-in {
-  from { opacity: 0; transform: scale(0.9); }
-  to   { opacity: 1; transform: scale(1);   }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes pop-in {
-  0% { opacity: 0; transform: scale(0.5); }
-  70% { transform: scale(1.05); }
-  100% { opacity: 1; transform: scale(1); }
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  70% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-/* Slide Animations */
 @keyframes slide-up {
-  from { transform: translateY(100%); opacity: 0; }
-  to   { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-/* Glow Animation */
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(161, 161, 170, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(161, 161, 170, 0.5); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.2);
+  }
 }
 
-/* Float Animation */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
 
-/* Animation Classes */
-.animate-fade-in-up { animation: fade-in-up 0.6s ease-out forwards; }
-.animate-fade-in-down { animation: fade-in-down 0.6s ease-out forwards; }
-.animate-fade-in-left { animation: fade-in-left 0.6s ease-out forwards; }
-.animate-fade-in-right { animation: fade-in-right 0.6s ease-out forwards; }
-.animate-fade-in { animation: fade-in 0.6s ease-out forwards; }
-.animate-scale-in { animation: scale-in 0.5s ease-out forwards; }
-.animate-pop-in { animation: pop-in 0.4s ease-out forwards; }
-.animate-slide-up { animation: slide-up 0.6s ease-out forwards; }
-.animate-glow-pulse { animation: glow-pulse 2s ease-in-out infinite; }
-.animate-float { animation: float 3s ease-in-out infinite; }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
 /* Animation Delays */
-.animation-delay-100  { animation-delay: 100ms; }
-.animation-delay-200  { animation-delay: 200ms; }
-.animation-delay-300  { animation-delay: 300ms; }
-.animation-delay-400  { animation-delay: 400ms; }
-.animation-delay-500  { animation-delay: 500ms; }
-.animation-delay-600  { animation-delay: 600ms; }
-.animation-delay-700  { animation-delay: 700ms; }
-.animation-delay-800  { animation-delay: 800ms; }
-.animation-delay-900  { animation-delay: 900ms; }
-.animation-delay-1000 { animation-delay: 1000ms; }
-.animation-delay-1100 { animation-delay: 1100ms; }
+.delay-100 {
+  animation-delay: 100ms;
+}
 
-/* Initial opacity for animated elements */
-.opacity-0-start { opacity: 0; }
+.delay-200 {
+  animation-delay: 200ms;
+}
 
-/* Smooth scroll */
-html { scroll-behavior: smooth; }
+.delay-300 {
+  animation-delay: 300ms;
+}
 
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-600 {
+  animation-delay: 600ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+.delay-800 {
+  animation-delay: 800ms;
+}
+
+/* Utilities */
+.text-gradient {
+  background: linear-gradient(to right, #ffffff, #a1a1aa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-primary {
+  background: linear-gradient(to right, #c084fc, #e879f9);
+  /* Purple to Pink */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

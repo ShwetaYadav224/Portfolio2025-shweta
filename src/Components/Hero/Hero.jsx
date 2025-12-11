@@ -10,6 +10,7 @@ import {
   Code2,
   Palette,
   Smartphone,
+  ExternalLink
 } from "lucide-react";
 
 export const Hero = () => {
@@ -37,98 +38,96 @@ export const Hero = () => {
   ];
 
   return (
-    <header className="relative min-h-screen overflow-hidden text-white bg-gradient-to-br from-[#1a0b2e] via-[#1e0e37] to-[#150825]">
-      {/* Animated background orbs */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-[#A1A1AA]/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#71717A]/10 rounded-full blur-3xl animate-pulse animation-delay-1000" />
-      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white/5 rounded-full blur-3xl animate-pulse animation-delay-500" />
+    <header className="relative min-h-screen overflow-hidden text-white bg-[#0F0715] pt-24 lg:pt-32">
+      {/* Background Gradients */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-900/20 rounded-full blur-[120px] -z-10 animate-pulse" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-900/20 rounded-full blur-[120px] -z-10 animate-pulse delay-700" />
+
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" />
 
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8 xl:px-20 relative z-10">
         <div className="grid min-h-screen items-center gap-y-12 py-20 lg:grid-cols-2 lg:gap-16 xl:gap-24 lg:py-0">
 
           {/* Left Column: Text */}
-          <div className="order-2 mx-auto max-w-2xl text-center lg:order-1 lg:mx-0 lg:text-left">
+          <div className="order-2 mx-auto max-w-2xl text-center lg:order-1 lg:mx-0 lg:text-left pt-10 lg:pt-0">
             {/* Badge */}
-            <div className="opacity-0-start animate-fade-in-down inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
-              <Sparkles className="w-4 h-4 text-[#A1A1AA]" />
-              <span className="text-sm font-medium text-[#A1A1AA]">Available for opportunities</span>
+            <div className="opacity-0 animate-fade-in-down inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 border border-white/10 hover:bg-white/5 transition-colors cursor-default">
+              <Sparkles className="w-4 h-4 text-purple-400" />
+              <span className="text-sm font-medium text-purple-200">Available for opportunities</span>
             </div>
 
             {/* Greeting */}
-            <p className="opacity-0-start animate-fade-in-up animation-delay-100 mb-4 text-lg font-medium text-[#A1A1AA]">
+            <p className="opacity-0 animate-fade-in-up delay-100 mb-4 text-lg font-medium text-gray-400">
               Hi, I'm
             </p>
 
             {/* Name */}
-            <h1 className="opacity-0-start animate-fade-in-up animation-delay-200 mb-6 text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl">
-              <span className="bg-gradient-to-r from-white via-white to-[#A1A1AA] bg-clip-text text-transparent">
+            <h1 className="opacity-0 animate-fade-in-up delay-200 mb-6 text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl">
+              <span className="text-gradient-primary">
                 Shweta Yadav
               </span>
             </h1>
 
             {/* Tagline */}
-            <div className="opacity-0-start animate-fade-in-up animation-delay-400 mb-8">
-              <p className="text-xl sm:text-2xl lg:text-3xl font-medium text-white/90">
+            <div className="opacity-0 animate-fade-in-up delay-400 mb-8">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-medium text-gray-200">
                 Full Stack Developer who builds
               </p>
-              <p className="text-xl sm:text-2xl lg:text-3xl font-medium mt-1">
-                <span className="bg-gradient-to-r from-[#A1A1AA] to-[#71717A] bg-clip-text text-transparent">
-                  beautiful digital experiences
-                </span>
+              <p className="text-xl sm:text-2xl lg:text-3xl font-medium mt-2">
+                <span className="text-purple-400 underline decoration-purple-500/30 underline-offset-4">immersive web experiences.</span>
               </p>
             </div>
 
             {/* Description */}
-            <p className="opacity-0-start animate-fade-in-up animation-delay-600 mb-10 text-lg leading-relaxed text-white/60 max-w-xl">
+            <p className="opacity-0 animate-fade-in-up delay-600 mb-10 text-lg leading-relaxed text-gray-400 max-w-xl mx-auto lg:mx-0">
               I transform ideas into elegant, functional web applications.
               Passionate about clean code, modern design, and creating experiences that users love.
             </p>
 
             {/* CTA Buttons */}
-            <div className="opacity-0-start animate-fade-in-up animation-delay-700 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
+            <div className="opacity-0 animate-fade-in-up delay-700 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
               <a
                 href="#projects"
-                className="group relative rounded-xl bg-gradient-to-r from-[#A1A1AA] to-[#71717A] px-8 py-4 font-semibold text-white shadow-lg shadow-[#A1A1AA]/25 transition-all duration-300 hover:shadow-xl hover:shadow-[#A1A1AA]/30 hover:scale-105 text-center"
+                className="group relative rounded-full bg-white text-black px-8 py-4 font-semibold shadow-lg shadow-white/10 transition-all duration-300 hover:shadow-xl hover:shadow-white/20 hover:scale-105 text-center flex items-center justify-center gap-2"
               >
-                <span className="relative z-10 flex items-center justify-center gap-2">
-                  View My Work
-                  <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-                </span>
+                View My Work
+                <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </a>
 
               <a
                 href="#contact"
-                className="rounded-xl border-2 border-white/20 bg-white/5 px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:border-[#A1A1AA]/50 hover:scale-105 text-center backdrop-blur-sm"
+                className="rounded-full glass px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:border-white/30 text-center backdrop-blur-sm"
               >
                 Get In Touch
               </a>
             </div>
 
             {/* Skill Tags */}
-            <div className="opacity-0-start animate-fade-in-up animation-delay-800 mt-10 flex flex-wrap justify-center gap-3 lg:justify-start">
+            <div className="opacity-0 animate-fade-in-up delay-800 mt-12 flex flex-wrap justify-center gap-3 lg:justify-start">
               {skills.map((skill, i) => (
                 <span
                   key={i}
-                  className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 backdrop-blur-sm hover:bg-white/10 hover:border-white/20 transition-all cursor-default"
+                  className="flex items-center gap-2 rounded-full glass px-5 py-2.5 text-sm text-gray-300 hover:bg-white/5 transition-all cursor-default border border-white/5"
                 >
-                  <span className="text-[#A1A1AA]">{skill.icon}</span>
+                  <span className="text-purple-400">{skill.icon}</span>
                   {skill.text}
                 </span>
               ))}
             </div>
 
             {/* Social Links */}
-            <div className="opacity-0-start animate-fade-in-up animation-delay-900 mt-8 flex items-center justify-center gap-4 lg:justify-start">
+            <div className="opacity-0 animate-fade-in-up delay-800 mt-10 flex items-center justify-center gap-6 lg:justify-start">
               {socials.map(({ Icon, href, label }, i) => (
                 <a
                   key={i}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center h-11 w-11 rounded-xl bg-white/5 border border-white/10 text-white/70 transition-all duration-300 hover:bg-white/10 hover:border-[#A1A1AA]/30 hover:text-white hover:scale-110"
+                  className="group text-gray-400 hover:text-white transition-colors duration-300"
                   title={label}
                 >
-                  <Icon className="h-5 w-5" />
+                  <Icon className="h-6 w-6 transform group-hover:scale-110 transition-transform duration-300" />
                 </a>
               ))}
             </div>
@@ -136,50 +135,48 @@ export const Hero = () => {
 
           {/* Right Column: Image */}
           <div className="order-1 relative flex justify-center lg:order-2 lg:justify-end">
-            <div className="relative group">
-              {/* Animated ring */}
-              <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#A1A1AA]/20 animate-spin" style={{ animationDuration: '20s' }} />
+            <div className="relative group perspective-1000">
+              {/* Abstract decorative elements behind image */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] bg-gradient-to-br from-purple-600/20 to-indigo-600/20 rounded-full blur-3xl animate-pulse" />
 
-              {/* Glow effect */}
-              <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-[#A1A1AA]/20 via-white/10 to-[#71717A]/20 blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-
-              {/* Image container */}
-              <div className="relative">
-                {!imageLoaded && !imageError && (
-                  <div className="h-72 w-72 sm:h-80 sm:w-80 lg:h-[26rem] lg:w-[26rem] rounded-full bg-gradient-to-br from-white/10 to-white/5 animate-pulse" />
+              <div className="relative z-10 transition-transform duration-500 hover:scale-[1.02]">
+                {imageError ? (
+                  <div className="w-72 h-72 sm:w-80 sm:h-80 lg:w-[400px] lg:h-[400px] rounded-2xl glass flex items-center justify-center border border-white/10">
+                    <span className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-400 to-pink-600">SY</span>
+                  </div>
+                ) : (
+                  <img
+                    src={hero}
+                    alt="Shweta Yadav"
+                    className={`w-72 sm:w-80 lg:w-[400px] object-cover rounded-2xl shadow-2xl shadow-purple-900/20 border border-white/10 transition-opacity duration-700 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                    onLoad={() => setImageLoaded(true)}
+                    onError={() => setImageError(true)}
+                  />
                 )}
 
-                {imageError && (
-                  <div className="flex h-72 w-72 sm:h-80 sm:w-80 lg:h-[26rem] lg:w-[26rem] items-center justify-center rounded-full bg-gradient-to-br from-white/10 to-white/5 border border-white/10">
-                    <div className="text-center p-8">
-                      <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-[#A1A1AA]/20 to-[#71717A]/20">
-                        <span className="text-4xl font-bold text-white">S</span>
-                      </div>
-                      <p className="text-sm text-white/60">Shweta Yadav</p>
+                {/* Floating Cards */}
+                <div className="absolute -right-8 top-12 glass p-4 rounded-xl opacity-0 animate-fade-in-left delay-500 hidden sm:block">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-purple-500/20 rounded-lg text-purple-400">
+                      <Code2 size={20} />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-400">Clean Code</p>
+                      <p className="text-sm font-bold">Always</p>
                     </div>
                   </div>
-                )}
-
-                <img
-                  src={hero}
-                  alt="Shweta Yadav - Full Stack Developer"
-                  draggable="false"
-                  loading="eager"
-                  onLoad={() => setImageLoaded(true)}
-                  onError={() => setImageError(true)}
-                  className={`w-72 sm:w-80 lg:w-[26rem] max-w-[85vw] select-none drop-shadow-2xl transition-all duration-700 group-hover:scale-105 ${imageLoaded ? "opacity-100" : "opacity-0"
-                    }`}
-                />
-
-                {/* Floating badges */}
-                <div className="absolute -top-4 -right-4 flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md animate-float">
-                  <Code2 className="w-4 h-4 text-[#A1A1AA]" />
-                  <span className="text-sm font-medium text-white">Developer</span>
                 </div>
 
-                <div className="absolute -bottom-2 -left-4 flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md animate-float animation-delay-500">
-                  <Palette className="w-4 h-4 text-[#A1A1AA]" />
-                  <span className="text-sm font-medium text-white">Designer</span>
+                <div className="absolute -left-8 bottom-20 glass p-4 rounded-xl opacity-0 animate-fade-in-right delay-700 hidden sm:block">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-pink-500/20 rounded-lg text-pink-400">
+                      <Palette size={20} />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-400">Design</p>
+                      <p className="text-sm font-bold">Pixel Perfect</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -188,17 +185,12 @@ export const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <a href="#about" className="flex flex-col items-center gap-2 text-white/40 hover:text-white/60 transition-colors">
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <ArrowDown className="w-5 h-5" />
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <a href="#about" className="flex flex-col items-center gap-2 text-white/30 hover:text-white transition-colors cursor-pointer">
+          <span className="text-xs uppercase tracking-widest font-medium">Scroll</span>
+          <ArrowDown className="w-4 h-4" />
         </a>
       </div>
-
-      {/* Floating decorative dots */}
-      <div className="pointer-events-none absolute top-1/4 left-20 w-2 h-2 rounded-full bg-[#A1A1AA] animate-float" />
-      <div className="pointer-events-none absolute top-1/3 right-32 w-3 h-3 rounded-full bg-white/40 animate-float animation-delay-700" />
-      <div className="pointer-events-none absolute bottom-1/4 left-1/4 w-2 h-2 rounded-full bg-white/30 animate-float animation-delay-300" />
     </header>
   );
 };

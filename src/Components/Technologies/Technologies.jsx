@@ -24,27 +24,18 @@ export const Technologies = () => {
   ];
 
   return (
-    <section className="relative py-24 lg:py-36 bg-gradient-to-br from-[#1e0e37] via-[#1a0b2e] to-[#150825] overflow-hidden">
-      {/* Background orbs */}
-      <div className="absolute top-40 right-20 w-80 h-80 bg-[#A1A1AA]/5 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 left-10 w-64 h-64 bg-[#71717A]/5 rounded-full blur-3xl animate-pulse animation-delay-700" />
-
+    <section className="relative py-24 bg-[#0F0715] overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 xl:px-20 relative z-10">
-        {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 opacity-0-start animate-fade-in-down">
-            <Sparkles className="w-4 h-4 text-[#A1A1AA]" />
-            <span className="text-sm font-medium text-[#A1A1AA]">Tech Stack</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass border border-white/10 mb-6">
+            <Sparkles className="w-4 h-4 text-purple-400" />
+            <span className="text-xs font-medium text-purple-200 uppercase tracking-wider">Tech Stack</span>
           </div>
-          <h2 className="opacity-0-start animate-fade-in-up animation-delay-200 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-            Technologies I
-            <span className="block mt-2 bg-gradient-to-r from-white via-[#A1A1AA] to-[#71717A] bg-clip-text text-transparent">
-              Work With
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60 mb-6">
+            Technologies I Work With
           </h2>
         </div>
 
-        {/* Tech Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
           {techStack.map((tech, index) => (
             <TechCard
@@ -53,15 +44,11 @@ export const Technologies = () => {
               lang={tech.lang}
               progress={tech.progress}
               color={tech.color}
-              delay={300 + index * 100}
+              delay={index * 100}
             />
           ))}
         </div>
       </div>
-
-      {/* Floating elements */}
-      <div className="pointer-events-none absolute top-1/3 left-20 w-2 h-2 rounded-full bg-[#A1A1AA] animate-float" />
-      <div className="pointer-events-none absolute bottom-1/4 right-16 w-3 h-3 rounded-full bg-white/40 animate-float animation-delay-500" />
     </section>
   );
 };
@@ -70,38 +57,32 @@ const TechCard = ({ icon, lang, progress, color, delay }) => {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    const timer = setTimeout(() => setWidth(progress), delay + 300);
+    const timer = setTimeout(() => setWidth(progress), 500 + delay);
     return () => clearTimeout(timer);
   }, [progress, delay]);
 
   return (
     <div
-      className="opacity-0-start animate-scale-in group relative rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-500 hover:bg-white/10 hover:border-white/20 hover:scale-105 hover:shadow-xl hover:shadow-[#A1A1AA]/10"
-      style={{ animationDelay: `${delay}ms` }}
+      className="group relative rounded-3xl border border-white/5 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-purple-500/30 hover:bg-white/10 hover:-translate-y-1 hover:shadow-xl"
     >
-      {/* Icon */}
       <div className="flex items-center justify-center mb-4">
-        <div className={`p-3 rounded-xl bg-gradient-to-br ${color} bg-opacity-20 text-white group-hover:scale-110 transition-transform duration-300`}>
+        <div className={`p-4 rounded-xl bg-gradient-to-br ${color} bg-opacity-20 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
           {icon}
         </div>
       </div>
 
-      {/* Language Name */}
-      <h3 className="text-center text-lg font-semibold text-white mb-4 group-hover:text-[#A1A1AA] transition-colors">
+      <h3 className="text-center text-lg font-semibold text-white mb-4 group-hover:text-purple-300 transition-colors">
         {lang}
       </h3>
 
-      {/* Progress Bar */}
-      <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+      <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
         <div
           className={`h-full rounded-full bg-gradient-to-r ${color} transition-all duration-1000 ease-out`}
           style={{ width: `${width}%` }}
         />
       </div>
-      <p className="text-center text-xs text-white/50 mt-2">{progress}%</p>
 
-      {/* Hover glow */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/0 to-white/0 group-hover:from-white/5 group-hover:to-transparent transition-all duration-300" />
+      <p className="text-center text-xs text-gray-400 mt-3 font-medium">{progress}% Proficiency</p>
     </div>
   );
 };

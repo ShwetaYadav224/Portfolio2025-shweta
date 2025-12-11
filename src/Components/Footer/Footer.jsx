@@ -23,7 +23,7 @@ export const Footer = () => {
     };
 
     return (
-        <footer className="relative bg-[#0d0518] py-16 border-t border-white/5">
+        <footer className="relative bg-[#0F0715] py-16 border-t border-white/5">
             <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 xl:px-20">
                 <div className="flex flex-col items-center gap-8">
                     {/* Logo */}
@@ -31,8 +31,8 @@ export const Footer = () => {
                         onClick={scrollToTop}
                         className="text-2xl font-bold text-white transition-all duration-300 hover:scale-105 group"
                     >
-                        <span className="bg-gradient-to-r from-[#A1A1AA] to-white bg-clip-text text-transparent">S</span>
-                        <span className="group-hover:text-[#A1A1AA] transition-colors">hweta</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">S</span>
+                        <span className="group-hover:text-purple-400 transition-colors">hweta</span>
                     </button>
 
                     {/* Navigation Links */}
@@ -41,10 +41,10 @@ export const Footer = () => {
                             <a
                                 key={link.label}
                                 href={link.href}
-                                className="text-white/60 transition-all duration-300 hover:text-white relative group"
+                                className="text-gray-400 transition-all duration-300 hover:text-white relative group"
                             >
                                 {link.label}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#A1A1AA] to-white transition-all duration-300 group-hover:w-full" />
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full" />
                             </a>
                         ))}
                     </nav>
@@ -57,7 +57,7 @@ export const Footer = () => {
                                 href={social.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-white/60 transition-all duration-300 hover:bg-white/10 hover:text-white hover:scale-110 border border-white/5 hover:border-white/20"
+                                className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-gray-400 transition-all duration-300 hover:bg-white/10 hover:text-white hover:scale-110 border border-white/5 hover:border-purple-500/30"
                                 title={social.label}
                             >
                                 {social.icon}
@@ -66,13 +66,13 @@ export const Footer = () => {
                     </div>
 
                     {/* Divider */}
-                    <div className="w-full max-w-sm h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                    <div className="w-full max-w-sm h-px bg-white/10" />
 
                     {/* Copyright */}
-                    <div className="flex flex-col items-center gap-3 text-center text-sm text-white/50">
+                    <div className="flex flex-col items-center gap-3 text-center text-sm text-gray-500">
                         <p>© {currentYear} Shweta Yadav. All rights reserved.</p>
                         <p className="flex items-center gap-1.5">
-                            Made with <Heart className="h-4 w-4 text-red-400 fill-red-400 animate-pulse" /> using React & Tailwind CSS
+                            Made with <Heart className="h-4 w-4 text-red-500 fill-red-500 animate-pulse" /> using React & Tailwind CSS
                         </p>
                     </div>
                 </div>
@@ -81,7 +81,7 @@ export const Footer = () => {
             {/* Scroll to top button */}
             <button
                 onClick={scrollToTop}
-                className="absolute right-6 bottom-6 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-r from-[#A1A1AA]/20 to-[#71717A]/20 text-white/70 transition-all duration-300 hover:from-[#A1A1AA]/30 hover:to-[#71717A]/30 hover:text-white hover:scale-110 border border-white/10 hover:border-[#A1A1AA]/30"
+                className="absolute right-6 bottom-6 flex h-11 w-11 items-center justify-center rounded-full bg-white/5 text-gray-400 transition-all duration-300 hover:bg-white/10 hover:text-white hover:-translate-y-1 border border-white/5 hover:border-purple-500/30"
                 aria-label="Scroll to top"
             >
                 <ArrowUp className="h-5 w-5" />
